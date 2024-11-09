@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.static("public"));
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 let posts = [
@@ -36,6 +37,16 @@ app.post("/edit-a-post", function (req, res) {
   } else {
     res.status(404).send("Post not found");
   }
+});
+
+app.post("/delete-a-post", function (req, res) {
+  const index = posts.findIndex((post) => post.id === req.body.id);
+  console.log(index);
+  if (index !== -1) {
+    // Eğer eleman bulunmuşsa
+    posts.splice(index, 1); // Elemanı diziden çıkarma
+  }
+  res.json({ success: true });
 });
 
 app.listen(port, function () {

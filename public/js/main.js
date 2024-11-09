@@ -35,3 +35,21 @@ editButtons.forEach((button) => {
     }
   });
 });
+
+function deleteButton(button) {
+  const id = button.parentNode.parentNode.parentNode.id.value.toString();
+  fetch("/delete-a-post", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id }), // Gönderilecek veriler
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.success) {
+        location.reload();
+      }
+    })
+    .catch((err) => console.error("Hata:", err));
+}

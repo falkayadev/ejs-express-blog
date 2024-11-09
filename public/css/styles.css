@@ -677,17 +677,12 @@ video {
   border-radius: 0.375rem;
 }
 
-.border-4 {
-  border-width: 4px;
-}
-
 .border {
   border-width: 1px;
 }
 
-.border-green-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(74 222 128 / var(--tw-border-opacity));
+.border-4 {
+  border-width: 4px;
 }
 
 .border-\[\#D8DBBD\] {
@@ -705,24 +700,14 @@ video {
   background-color: rgb(42 54 99 / var(--tw-bg-opacity));
 }
 
-.bg-blue-400 {
+.bg-\[\#D8DBBD\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+  background-color: rgb(216 219 189 / var(--tw-bg-opacity));
 }
 
-.bg-blue-50 {
+.bg-\[\#FAF6E3\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(239 246 255 / var(--tw-bg-opacity));
-}
-
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
-
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  background-color: rgb(250 246 227 / var(--tw-bg-opacity));
 }
 
 .bg-green-400 {
@@ -732,26 +717,6 @@ video {
 
 .bg-inherit {
   background-color: inherit;
-}
-
-.bg-\[\#FAF6E3\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 246 227 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#D8DBBD\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(216 219 189 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#B59F78\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(181 159 120 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#FCFAEE\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 250 238 / var(--tw-bg-opacity));
 }
 
 .p-2 {
@@ -805,6 +770,11 @@ video {
   font-weight: 300;
 }
 
+.text-\[\#FAF6E3\] {
+  --tw-text-opacity: 1;
+  color: rgb(250 246 227 / var(--tw-text-opacity));
+}
+
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -813,16 +783,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-yellow-200 {
-  --tw-text-opacity: 1;
-  color: rgb(254 240 138 / var(--tw-text-opacity));
-}
-
-.text-\[\#FAF6E3\] {
-  --tw-text-opacity: 1;
-  color: rgb(250 246 227 / var(--tw-text-opacity));
 }
 
 .shadow-md {
@@ -836,12 +796,14 @@ video {
   outline-offset: 2px;
 }
 
-.outline-green-400 {
-  outline-color: #4ade80;
-}
-
 .outline-\[\#D8DBBD\] {
   outline-color: #D8DBBD;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .passive {

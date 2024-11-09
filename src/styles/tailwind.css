@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.passive {
+  @apply h-0 opacity-0 invisible;
+}
+
+.active {
+  @apply h-auto opacity-100 visible;
+}

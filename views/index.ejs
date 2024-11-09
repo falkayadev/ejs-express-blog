@@ -1,0 +1,39 @@
+<%- include("partials/header.ejs") %>
+<div class="max-w-screen-xl mx-auto py-12 w-full flex flex-col">
+    <% if(locals.posts) { %>
+        <div class="flex flex-col gap-4" id="postList">
+            <% posts.forEach(post =>{ %>
+                <form method="POST" action="/edit-a-post" class="bg-[#D8DBBD] rounded-md p-4 flex flex-col border border-black" id="<%= post.id %>" data-editable="false">
+                    <input type="text" name="id" value="<%= post.id %>" class="hidden">
+                    <div class="flex items-center justify-between">
+                        <input type="text" name="title" class="text-xl font-bold mb-2 w-full bg-inherit outline-none" value="<%=post["title"]%>" readonly/>
+                        <div class="flex items-center gap-4">
+                            <p class="font-bold text-gray-500 text-xs text-nowrap"><%= new Date().toISOString().slice(0,10) %></p>
+                            <button type="button" class="text-[#FAF6E3] size-8 rounded-full bg-[#2A3663] editButton" >
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <textarea name="content" class="text-lg font-light w-full bg-inherit resize-none h-48 overflow-auto outline-none" readonly><%=post["content"]%></textarea>
+                    <button class="ml-auto bg-green-400 px-8 py-2 rounded-md updateButton" type="submit" style="display: none;">UPDATE</button>
+                </form>
+            <% }) %>
+        </ul>
+        <% } %>
+    
+        <form id="createForm" action="/create-a-post" method="POST" class="flex flex-col gap-4 bg-[#FAF6E3] p-4 rounded-md absolute max-w-screen-sm w-full border-4 border-[#D8DBBD] shadow-md right-14 bottom-32 passive">
+            <div class="flex flex-col ">
+                <label for="title" class="font-bold text-xl ">Title:</label>
+                <input type="text" name="title" class="rounded-md p-2 outline-[#D8DBBD]">
+            </div>
+            <div class="flex flex-col">
+                <label for="content" class="font-bold text-xl">Content:
+                </label>
+                <textarea name="content" id="content" class="rounded-md p-2 outline-[#D8DBBD]" rows="10"></textarea>
+            </div>
+            <button type="submit" class="font-bold bg-[#D8DBBD] ml-auto px-6 py-2 rounded-md">Submit</button>
+        </form>
+
+   
+</div>
+<%- include("partials/footer.ejs") %>
